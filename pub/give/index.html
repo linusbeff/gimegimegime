@@ -1,0 +1,26 @@
+<html DOCTYPE>
+  <head>
+    <title>give HTML</title>
+    <script src="http://linus.burgeff.de/src/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    <script>
+    let socket = io.connect("http://localhost:3000");
+    </script>
+  </head>
+  <body>
+    <textarea id="int" style="width: 500px;height: 300px"></textarea>
+    <br>
+    <button id="btn" style="width: 150px;height: 40px">SEND</button>
+
+    <script>
+    $('#btn').on('click',function() {
+      console.log($('#int').val());
+      $('#history').append(`<p style="margin: 0"> ${$('#int').val()} </p>`);
+      socket.emit('new', $('#int').val());
+      $('#int').val('');
+    })
+    </script>
+    <div id="history">
+    </div>
+  </body>
+</html>

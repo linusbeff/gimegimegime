@@ -1,0 +1,16 @@
+<html DOCTYPE>
+  <head>
+    <script src="http://linus.burgeff.de/src/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    <script>
+    let socket = io.connect("http://localhost:3000")
+    socket.on('toClient', function (data) {
+      console.log(data);
+      $('body').append(data + "<br>");
+    });
+    </script>
+    <title>get HTML</title>
+  </head>
+  <body>
+  </body>
+</html>

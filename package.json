@@ -9,6 +9,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "express": "@latest",
+    "socket.io": "@latest"
+  },
   "devDependencies": {
     "nodemon": "^1.11.0"
   }
